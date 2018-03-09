@@ -70,8 +70,15 @@ called on the form object.
 $valid = $form->validate();
 ```
 
+The validate method returns a boolean `true` or `false`.
+
 ### Extracting Errors
 
 ```php?start_inline=1
 $errors = $form->getErrors();
 ```
+
+This method will return an associative array of all of the fields and callbacks
+that were executed on the `validate()` call. This will give details about why the 
+form validation was not successful, or it will be empty if there are no errors to
+report.
